@@ -374,6 +374,78 @@ class Archive
             return *this;
         }
 
+        Archive& operator&(std::wstring& v)
+        {
+            uint32_t len;
+            *this & len;
+            v.clear();
+            v.reserve(len);
+            for (uint32_t i = 0; i < len; ++i) {
+              wchar_t c;
+              *this & c;
+              v.push_back(c);
+            }
+            return *this;
+        }
+
+        const Archive& operator&(const std::wstring& v) const
+        {
+            uint32_t len = v.length();
+            *this & len;
+            for (uint32_t i = 0; i < len; ++i) {
+              *this & v[i];
+            }
+            return *this;
+        }
+
+        Archive& operator&(std::u16string& v)
+        {
+            uint32_t len;
+            *this & len;
+            v.clear();
+            v.reserve(len);
+            for (uint32_t i = 0; i < len; ++i) {
+              char16_t c;
+              *this & c;
+              v.push_back(c);
+            }
+            return *this;
+        }
+
+        const Archive& operator&(const std::u16string& v) const
+        {
+            uint32_t len = v.length();
+            *this & len;
+            for (uint32_t i = 0; i < len; ++i) {
+              *this & v[i];
+            }
+            return *this;
+        }
+
+        Archive& operator&(std::u32string& v)
+        {
+            uint32_t len;
+            *this & len;
+            v.clear();
+            v.reserve(len);
+            for (uint32_t i = 0; i < len; ++i) {
+              char32_t c;
+              *this & c;
+              v.push_back(c);
+            }
+            return *this;
+        }
+
+        const Archive& operator&(const std::u32string& v) const
+        {
+            uint32_t len = v.length();
+            *this & len;
+            for (uint32_t i = 0; i < len; ++i) {
+              *this & v[i];
+            }
+            return *this;
+        }
+
     private:
         template <class T>
             T Swap(const T& v) const

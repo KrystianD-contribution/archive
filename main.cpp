@@ -163,6 +163,9 @@ int main()
     Test((unsigned long long)ULLONG_MAX);
 
     Test(std::string("salut"));
+    Test(std::wstring(L"salut"));
+    Test(std::u16string(u"salut"));
+    Test(std::u32string(U"salut"));
     Test(123.456f);
     Test(-123.456f);
     Test(123.456);
@@ -180,14 +183,29 @@ int main()
     std::cout << "STL..." << std::endl;
     Test(std::vector<int>({1, 2, 3, 4, 5}));
     Test(std::vector<std::string>({"a", "bb", "ccc", "dddd"}));
+    Test(std::vector<std::wstring>({L"a", L"bb", L"ccc", L"dddd"}));
+    Test(std::vector<std::u16string>({u"a", u"bb", u"ccc", u"dddd"}));
+    Test(std::vector<std::u32string>({U"a", U"bb", U"ccc", U"dddd"}));
     Test(std::deque<int>({1, 2, 3, 4, 5}));
     Test(std::deque<std::string>({"a", "bb", "ccc", "dddd"}));
+    Test(std::deque<std::wstring>({L"a", L"bb", L"ccc", L"dddd"}));
+    Test(std::deque<std::u16string>({u"a", u"bb", u"ccc", u"dddd"}));
+    Test(std::deque<std::u32string>({U"a", U"bb", U"ccc", U"dddd"}));
     Test(std::list<int>({1, 2, 3, 4, 5}));
     Test(std::list<std::string>({"a", "bb", "ccc", "dddd"}));
+    Test(std::list<std::wstring>({L"a", L"bb", L"ccc", L"dddd"}));
+    Test(std::list<std::u16string>({u"a", u"bb", u"ccc", u"dddd"}));
+    Test(std::list<std::u32string>({U"a", U"bb", U"ccc", U"dddd"}));
     Test(std::set<int>({1, 2, 3, 4, 5}));
     Test(std::set<std::string>({"a", "bb", "ccc", "dddd"}));
+    Test(std::set<std::wstring>({L"a", L"bb", L"ccc", L"dddd"}));
+    Test(std::set<std::u16string>({u"a", u"bb", u"ccc", u"dddd"}));
+    Test(std::set<std::u32string>({U"a", U"bb", U"ccc", U"dddd"}));
     Test(std::multiset<int>({1, 2, 3, 4, 5}));
     Test(std::multiset<std::string>({"a", "bb", "ccc", "dddd"}));
+    Test(std::multiset<std::wstring>({L"a", L"bb", L"ccc", L"dddd"}));
+    Test(std::multiset<std::u16string>({u"a", u"bb", u"ccc", u"dddd"}));
+    Test(std::multiset<std::u32string>({U"a", U"bb", U"ccc", U"dddd"}));
     Test(std::map<int, std::string>({std::make_pair(1, "a"), std::make_pair(2, "bb")}));
     Test(std::multimap<int, std::string>({std::make_pair(1, "a"), std::make_pair(2, "bb")}));
 
