@@ -261,7 +261,10 @@ class Archive
 
         SERIALIZER_FOR_POD(bool)
         SERIALIZER_FOR_POD(char)
+        SERIALIZER_FOR_POD(char16_t)
+        SERIALIZER_FOR_POD(char32_t)
         SERIALIZER_FOR_POD(unsigned char)
+        SERIALIZER_FOR_POD(wchar_t)
         SERIALIZER_FOR_POD(short)
         SERIALIZER_FOR_POD(unsigned short)
         SERIALIZER_FOR_POD(int)
